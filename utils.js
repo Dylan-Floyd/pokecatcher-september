@@ -24,3 +24,31 @@ export function getRandomPokemon() {
         pokemon[randomIndex3]
     ];
 }
+
+// renderNewPokemon()
+// - We need to find three unique pokemon to show the user
+//     - getRandomPokemon()
+//     - Whenever we find 3 new pokemon, we need to track that they have now been "seen"
+//     - call encounterPokemon() on all 3 new pokemon
+
+// getRandomPokemon()
+// - does the hard work of finding three unique and random pokemon from our raw data
+// - returns an array of three random pokemon
+
+// setPokedex(pokedex)
+// - takes in a pokedex, stringifies it and puts it into local storage
+
+// getPokedex()
+// - retrieves and parses the pokedex in local storage
+
+// encounterPokemon(id)
+// - getPokedex
+// - If the pokemon has been previously seen, just increment the times seen
+// - If this is the first time, make a new object with `{ id: 5, encoutered: 1, caught: 0 }`
+// - setPokedex
+
+// catchPokemon(id)
+// - getPokedex
+// - no need to check if it's been encountered. If you got this far, it _has_ been encountered.
+// - Increment the `caught` of this pokemon in local storage
+// - setPokedex
