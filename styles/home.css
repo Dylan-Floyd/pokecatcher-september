@@ -1,1 +1,38 @@
 /* add home page styles here */
+.pokemon-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+label {
+    cursor:pointer;
+    width: 220px;
+}
+
+label > img {
+    border: 2px solid grey;
+    border-radius: 5px;
+    transition: ease-in-out .2s;
+    box-shadow: 2px 2px 5px 2px rgba(100, 100, 100, 0.4);
+    width: 200px;
+    background-color: aqua;
+}
+input[type="radio"] {
+    margin: 0;
+    padding: 0;
+}
+input[name="poke-select"] {
+    display: none;
+}
+
+input[name="poke-select"]:checked + img {
+    border-color: red;
+    transform: scale(1.02);
+    box-shadow: 4px 4px 8px 3px rgba(100, 100, 100, 0.4);
+}
+
+.select-div {
+    padding: 40px;
+}
