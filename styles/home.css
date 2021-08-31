@@ -33,6 +33,6 @@ input[name="poke-select"]:checked + img {
     box-shadow: 4px 4px 8px 3px rgba(100, 100, 100, 0.4);
 }
 
-.select-div {
+.catch-div {
     padding: 40px;
 }

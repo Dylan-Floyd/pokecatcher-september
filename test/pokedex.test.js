@@ -1,4 +1,4 @@
-import { catchPokemon, encounterPokemon, getPokedexData, storePokedexData } from '../pokedex.js';
+import { catchPokemon, encounterPokemon, getPokedexData, getTotalCaught, storePokedexData } from '../pokedex.js';
 
 const test = QUnit.test;
 
@@ -91,6 +91,30 @@ test('catchPokemon should increment the catches for an id', expect => {
     catchPokemon(1);
     const actual = getPokedexData();
     expect.deepEqual(actual, expected);
+
+    resetStorage();
+});
+
+test('getTotalCaught should return an accurate total', expect => {
+    resetStorage();
+
+    const mockData = {
+        id1: {
+            id: 1,
+            encounters: 1,
+            catches: 2
+        },
+        id2: {
+            id: 2,
+            encounters: 1,
+            catches: 5
+        }
+    };
+    storePokedexData(mockData);
+
+    const expected = 7;
+    const actual = getTotalCaught();
+    expect.equal(actual, expected);
 
     resetStorage();
 });

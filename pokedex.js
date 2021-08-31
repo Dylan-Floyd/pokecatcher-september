@@ -69,3 +69,19 @@ export function catchPokemon(id) {
     data['id' + id] = item;
     storePokedexData(data);
 }
+
+export function getTotalCaught() {
+    let data = getPokedexData();
+    return Object.keys(data).reduce((acc, curr) => {
+        acc += data[curr].catches;
+        return acc;
+    }, 0);
+}
+
+export function getTotalEncounters() {
+    let data = getPokedexData();
+    return Object.keys(data).reduce((acc, curr) => {
+        acc += data[curr].encounters;
+        return acc;
+    }, 0);
+}
