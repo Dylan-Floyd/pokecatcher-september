@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="./results.css">
@@ -20,7 +21,7 @@
     </header>
     <main>
         <section class="main-section">
-            You did it :^)
+            Congratulations! You're well on your way to becoming a great Pokemon Trainer. Here are the results from your journey:
             <table class="paleBlueRows">
                 <thead>
                     <tr>
@@ -39,8 +40,16 @@
                     </tr>
                 </tfoot>
             </table>
+            
+            <div width="400" height="400">
+                <canvas id="chart-canvas-1" width="400" height="400"></canvas>
+            </div>
+            
+            <div width="400" height="400">
+                <canvas id="chart-canvas-2" width="400" height="400"></canvas>
+            </div>
             <div>
-                <button id="again-button">Again, Again!</button>
+                <button id="again-button">Play Again</button>
             </div>
         </section>
     </main>

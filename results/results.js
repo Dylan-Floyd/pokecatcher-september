@@ -1,3 +1,4 @@
+import { attachCatchesChart, attachEncountersChart } from '../chart-utils.js';
 import { getPokedexData, getTotalCaught, getTotalEncounters, storePokedexData } from '../pokedex.js';
 import { findPokemonById } from '../utils.js';
 
@@ -33,3 +34,11 @@ againButton.addEventListener('click', () => {
     storePokedexData({});
     window.location.href = '../';
 });
+
+//Render chart 1
+const chartCanvas1 = document.querySelector('#chart-canvas-1');
+attachEncountersChart(chartCanvas1);
+
+//Render chart 2:
+const chartCanvas2 = document.querySelector('#chart-canvas-2');
+attachCatchesChart(chartCanvas2);
