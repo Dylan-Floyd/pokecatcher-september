@@ -30,7 +30,12 @@ function renderNewPokemon() {
 }
 
 catchButton.addEventListener('click', () => {
-    let caughtPokemonIndex = document.querySelector('input[name="poke-select"]:checked').value;
+    let checkedPokemon = document.querySelector('input[name="poke-select"]:checked');
+    if (!checkedPokemon) {
+        return;
+    }
+    checkedPokemon.checked = false;
+    let caughtPokemonIndex = checkedPokemon.value;
     catchPokemon(pokemon[caughtPokemonIndex].id);
     let total = getTotalCaught();
     if (total >= 10) {
@@ -41,5 +46,5 @@ catchButton.addEventListener('click', () => {
     }
 });
 
-
+//Everything's set up, render the initial pokemon.
 renderNewPokemon();

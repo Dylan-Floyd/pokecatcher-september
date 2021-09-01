@@ -21,6 +21,7 @@ function renderTableRow(pokedexItem) {
     return row;
 }
 
+//Render the table
 let pokedexData = getPokedexData();
 for (let key of Object.keys(pokedexData)) {
     tableBody.appendChild(renderTableRow(pokedexData[key]));
