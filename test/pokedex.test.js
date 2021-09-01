@@ -2,6 +2,30 @@ import { catchPokemon, encounterPokemon, getPokedexData, getTotalCaught, storePo
 
 const test = QUnit.test;
 
+
+function storageMock() {
+    var storage = {};
+
+    return {
+        setItem: function(key, value) {
+            storage[key] = value || '';
+        },
+        getItem: function(key) {
+            return key in storage ? storage[key] : null;
+        },
+        removeItem: function(key) {
+            delete storage[key];
+        },
+        get length() {
+            return Object.keys(storage).length;
+        },
+        key: function(i) {
+            var keys = Object.keys(storage);
+            return keys[i] || null;
+        }
+    };
+}
+
 function resetStorage() {
     Object.defineProperty(window, 'localStorage', {
         value: storageMock(),
