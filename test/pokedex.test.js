@@ -54,6 +54,7 @@ test('storePokedexData and getPokedexData should return the same object', expect
 
 test('encounterPokemon should add an entry to the pokedex data for the id if it doesn\'t exit', expect => {
     resetStorage();
+    storePokedexData({});
     const expected = {
         id1: {
             id: 1,
