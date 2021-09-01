@@ -25,6 +25,12 @@ export function getRandomPokemon() {
     ];
 }
 
+export function findPokemonById(id) {
+    return pokemon.find((singlePokemon) => {
+        return singlePokemon.id === id;
+    });
+}
+
 // renderNewPokemon()
 // - We need to find three unique pokemon to show the user
 //     - getRandomPokemon()
