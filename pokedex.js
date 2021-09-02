@@ -17,10 +17,7 @@ Data format:
         catches: 0
     },
 }
-
 */
-
-
 export function getPokedexData() {
     return (JSON.parse(localStorage.getItem('POKEDEX')) || {});
 }
@@ -34,7 +31,7 @@ export function encounterPokemon(id) {
     if (!id || typeof id !== 'number') {
         throw 'encounterPokemon(id) requires an argument of type number';
     }
-    let data = getPokedexData();
+    const data = getPokedexData();
     let item = data['id' + id];
     if (item) {
         item.encounters++;
@@ -54,7 +51,7 @@ export function catchPokemon(id) {
     if (!id || typeof id !== 'number') {
         throw 'catchPokemon(id) requires an argument of type number';
     }
-    let data = getPokedexData();
+    const data = getPokedexData();
     let item = data['id' + id];
     if (item) {
         item.catches++;
@@ -71,7 +68,7 @@ export function catchPokemon(id) {
 }
 
 export function getTotalCaught() {
-    let data = getPokedexData();
+    const data = getPokedexData();
     return Object.keys(data).reduce((acc, curr) => {
         acc += data[curr].catches;
         return acc;
@@ -79,7 +76,7 @@ export function getTotalCaught() {
 }
 
 export function getTotalEncounters() {
-    let data = getPokedexData();
+    const data = getPokedexData();
     return Object.keys(data).reduce((acc, curr) => {
         acc += data[curr].encounters;
         return acc;

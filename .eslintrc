@@ -18,6 +18,8 @@
     "storageMock": false
   },
   "rules": {
+    "prefer-const": "warn",
+    "eol-last": "error",
     "eqeqeq": ["error", "always"],
     "no-console": "warn",
     "indent": [

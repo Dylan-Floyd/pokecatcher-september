@@ -1,6 +1,6 @@
 table.paleBlueRows {
     font-family: Arial, Helvetica, sans-serif;
-    width: 350px;
+    width: 400px;
     height: 200px;
     text-align: center;
     background-color: black;
@@ -47,4 +47,9 @@ table.paleBlueRows tfoot {
 
 table.paleBlueRows tfoot td {
     font-size: 14px;
+}
+
+.main-section > span {
+    width: 400px;
+    margin: 5px;
 }
