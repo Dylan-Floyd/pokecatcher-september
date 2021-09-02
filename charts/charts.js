@@ -1,7 +1,7 @@
 
 var ctx = document.getElementById('chart-canvas').getContext('2d');
 // eslint-disable-next-line no-undef
-var myChart = new Chart(ctx, {
+new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
