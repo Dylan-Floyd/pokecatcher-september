@@ -13,7 +13,7 @@ function renderTableRow(pokedexItem) {
     const encountersTD = document.createElement('td');
     const catchesTD = document.createElement('td');
 
-    let pokemon = findPokemonById(pokedexItem.id);
+    const pokemon = findPokemonById(pokedexItem.id);
     nameTD.textContent = pokemon.pokemon;
     encountersTD.textContent = pokedexItem.encounters;
     catchesTD.textContent = pokedexItem.catches;
@@ -23,8 +23,8 @@ function renderTableRow(pokedexItem) {
 }
 
 //Render the table
-let pokedexData = getPokedexData();
-for (let key of Object.keys(pokedexData)) {
+const pokedexData = getPokedexData();
+for (const key of Object.keys(pokedexData)) {
     tableBody.appendChild(renderTableRow(pokedexData[key]));
 }
 encountersTotalTd.textContent = '' + getTotalEncounters();

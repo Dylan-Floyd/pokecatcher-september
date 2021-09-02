@@ -3,13 +3,13 @@ import { findPokemonById } from './utils.js';
 
 //returns { labels: ~labeldata~, data: ~datapoints~ }
 export function getEncounterChartData() {
-    let labels = [];
-    let data = [];
-    let pokedexData = getPokedexData();
-    let keys = Object.keys(pokedexData);
+    const labels = [];
+    const data = [];
+    const pokedexData = getPokedexData();
+    const keys = Object.keys(pokedexData);
     for (let i = 0; i < keys.length; i++) {
-        let pokedexEntry = pokedexData[keys[i]];
-        let name = findPokemonById(pokedexEntry.id).pokemon;
+        const pokedexEntry = pokedexData[keys[i]];
+        const name = findPokemonById(pokedexEntry.id).pokemon;
         labels.push(name);
         data.push(pokedexEntry.encounters);
     }
@@ -17,13 +17,13 @@ export function getEncounterChartData() {
 }
 
 export function getCatchesChartData() {
-    let labels = [];
-    let data = [];
-    let pokedexData = getPokedexData();
-    let keys = Object.keys(pokedexData);
+    const labels = [];
+    const data = [];
+    const pokedexData = getPokedexData();
+    const keys = Object.keys(pokedexData);
     for (let i = 0; i < keys.length; i++) {
-        let pokedexEntry = pokedexData[keys[i]];
-        let name = findPokemonById(pokedexEntry.id).pokemon;
+        const pokedexEntry = pokedexData[keys[i]];
+        const name = findPokemonById(pokedexEntry.id).pokemon;
         if (pokedexEntry.catches > 0) {
             labels.push(name);
             data.push(pokedexEntry.catches);
@@ -40,11 +40,11 @@ export function getCatchesChartData() {
  *  }
  */
 export function countValuesForKey(arrayOfObjects, key, ignoreValue) {
-    let valuesData = {
+    const valuesData = {
         values: [],
         counts: []
     };
-    for (let currKey of Object.keys(arrayOfObjects)) {
+    for (const currKey of Object.keys(arrayOfObjects)) {
         const pokemonData = findPokemonById(arrayOfObjects[currKey].id);
         const value = pokemonData[key];
         //don't count the value it's equal to ignoreValue and
@@ -68,7 +68,7 @@ export function countValuesForKey(arrayOfObjects, key, ignoreValue) {
 }
 
 export function attachEncountersChart(targetCanvas) {
-    let encountersData = getEncounterChartData();
+    const encountersData = getEncounterChartData();
     // eslint-disable-next-line no-undef
     new Chart(targetCanvas, {
         type: 'bar',
@@ -107,7 +107,7 @@ export function attachEncountersChart(targetCanvas) {
 }
 
 export function attachCatchesChart(targetCanvas) {
-    let catchesData = getCatchesChartData();
+    const catchesData = getCatchesChartData();
     // eslint-disable-next-line no-undef
     new Chart(targetCanvas, {
         type: 'bar',
@@ -146,7 +146,7 @@ export function attachCatchesChart(targetCanvas) {
 }
 
 export function attachType1Chart(targetCanvas) {
-    let type1Data = countValuesForKey(getPokedexData(), 'type_1', 'NA');
+    const type1Data = countValuesForKey(getPokedexData(), 'type_1', 'NA');
     // eslint-disable-next-line no-undef
     new Chart(targetCanvas, {
         type: 'bar',
@@ -185,7 +185,7 @@ export function attachType1Chart(targetCanvas) {
 }
 
 export function attachValueCountChart(targetCanvas, key, ignoreValue, chartLabel) {
-    let type1Data = countValuesForKey(getPokedexData(), key, ignoreValue);
+    const type1Data = countValuesForKey(getPokedexData(), key, ignoreValue);
     // eslint-disable-next-line no-undef
     new Chart(targetCanvas, {
         type: 'bar',
